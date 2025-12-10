@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebeng.in</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scroll Reveal -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const delay = (index * 120) + (Math.random() * 150);
+                    setTimeout(() => entry.target.classList.add("show"), delay);
+                } else {
+                    entry.target.classList.remove("show");
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    });
+    </script>
+
+    <!-- Navbar Scroll Effect -->
+    <script>
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("scrolled", window.scrollY > 20);
+    });
+    </script>
+
+    <!-- Hero Letter Animation -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const title = document.querySelector(".hero-title");
+        const text = title.textContent.trim();
+        title.textContent = "";
+
+        [...text].forEach((letter, i) => {
+            const span = document.createElement("span");
+            span.textContent = letter;
+            span.style.animationDelay = (i * 0.08) + "s";
+            title.appendChild(span);
+        });
+    });
+    </script>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="image/ChatGPT Image Nov 24, 2025, 02_23_57 AM.png" class="nav-logo" alt="Nebeng.in Logo">
+            <span class="nav-title">Nebeng.in</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="dashboard.html">Jadwal</a></li>
+            <li><a href="Fitur.html">Fitur</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="#" id="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- LOGIN POPUP -->
+    <div id="login-box" class="login-box hidden">
+        <input type="email" id="email" placeholder="Email admin">
+        <input type="password" id="password" placeholder="Password admin">
+        <button onclick="login()">Login</button>
+        <p id="login-result"></p>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero reveal fade-scale" id="hero">
+        <img src="image/ChatGPT Image Nov 24, 2025, 02_23_57 AM.png" class="logo" alt="Nebeng.in Logo">
+
+        <div class="hero-content">
+            <h1 class="hero-title reveal fade-up">Nebeng.in</h1>
+            <p class="reveal fade-left">
+            </p>
+        </div>
+    </section>
+
+    <!-- JADWAL MODERN -->
+    <section class="jadwal-modern reveal fade-up section-aurora section-gradient" id="jadwal-modern">
+        <h2 class="reveal fade-up">Jadwal Antar Jemput</h2>
+        <p class="reveal fade-left">Pilih waktu perjalanan yang sesuai dengan aktivitasmu.</p>
+
+        <div class="jadwal-container">
+            <div class="jadwal-card pagi reveal fade-up">
+                <h3>Pagi</h3>
+                <span>07.00 – 09.00 WIB</span>
+            </div>
+
+            <div class="jadwal-card siang reveal fade-up">
+                <h3>Siang</h3>
+                <span>11.00 – 13.00 WIB</span>
+            </div>
+
+            <div class="jadwal-card sore reveal fade-up">
+                <h3>Sore</h3>
+                <span>15.00 – 17.00 WIB</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATAR BELAKANG -->
+    <section id="latar-belakang" class="latar-section reveal fade-right section-aurora section-gradient">
+        <h2 class="reveal fade-up">Nebeng.in</h2>
+
+        <p class="reveal fade-left">
+            Mobilitas mahasiswa di kawasan kampus ITS, PENS, dan PPNS semakin tinggi...
+        </p>
+
+        <p class="reveal fade-right">
+            Dari permasalahan ini, Nebeng.in hadir sebagai platform berbagi tumpangan...
+        </p>
+    </section>
+
+    <!-- SCROLL DEMO -->
+    <div class="example">
+        <section class="scroll-section reveal fade-up"><pre>Scroll</pre></section>
+        <section class="scroll-section reveal fade-left"><pre>to</pre></section>
+        <section class="scroll-section reveal fade-right"><pre>trigger</pre></section>
+        <section class="scroll-section reveal fade-scale"><pre>animations!</pre></section>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

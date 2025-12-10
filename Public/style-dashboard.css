@@ -1,0 +1,311 @@
+/* ======================================================
+   GLOBAL
+====================================================== */
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: #f4f6fb;
+    overflow-x: hidden;
+}
+
+/* Fade animation */
+.fade {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 190px;
+    height: 100%;
+    background: #0d2a63;
+    color: white;
+    padding: 25px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar.closed {
+    transform: translateX(-300px);
+}
+
+.sidebar h2 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #ffffffbb;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 6px;
+    transition: 0.25s;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+/* ======================================================
+   CONTENT WRAPPER
+====================================================== */
+.content-wrapper {
+    margin-left: 240px;
+    transition: margin-left 0.3s ease;
+}
+
+.content-wrapper.shifted {
+    margin-left: 0;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+.navbar {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 998;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    color: #0d2a63;
+    padding: 8px;
+}
+
+/* ======================================================
+   STATS CARDS (FEATHER ICON READY)
+====================================================== */
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #e7edff);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card i,
+.card svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.6;
+    color: #0d2a63;
+    opacity: 0.8;
+}
+
+/* ======================================================
+   TABLES
+====================================================== */
+.table-container h3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+    color: #0d2a63;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+}
+
+table th {
+    background: #0d2a63;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e8f0;
+    color: #2c3e50;
+}
+
+table tr:hover td {
+    background: #eef3ff;
+}
+
+/* ======================================================
+   BUTTONS
+====================================================== */
+button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 6px;
+    padding: 7px 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button.approve {
+    background: #27ae60;
+}
+
+button.reject {
+    background: #e74c3c;
+}
+
+/* ======================================================
+   STAT CARD STRUCTURE (Alternative Modern Layout)
+====================================================== */
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.stat-card .icon {
+    width: 36px;
+    height: 36px;
+    stroke-width: 1.5;
+    color: #1e3c72;
+}
+
+.stat-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-text .label {
+    font-size: 14px;
+    color: #666;
+}
+
+.stat-text .value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e3c72;
+}
+
+/* ============================
+   PROFILE MODAL
+============================ */
+.profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.profile-modal.hidden {
+    display: none;
+}
+
+.profile-box {
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    position: relative;
+    animation: popIn 0.35s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    background: #e74c3c;
+    padding: 10px 18px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    opacity: 0.85;
+}
